@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const Timer = () => {
-    const [start,setStart] = useState();
-    const [end,setEnd] = useState();
+    const [start,setStart] = useState("");
+    const [end,setEnd] = useState("");
     const [timer,setTimer] = useState();
 
     const handleClick = () => {
@@ -11,21 +11,21 @@ const Timer = () => {
             setTimer((prev) => {
                 if (+prev === +end) {
                     clearInterval(time);
+                    setStart("");
+                    setEnd("");
                     return end;
                 }
                 return +prev+1;
             })
         },1000);
-        setStart(null);
-        setEnd(null);
     }
 
     return(
         <>
             <h2>*** TIMER ***</h2>
             <div>Timer: {timer}</div>
-            <input onChange={(el)=>{setStart(el.target.value)}} type="number" name="" id="" placeholder="start" />
-            <input onChange={(el)=>{setEnd(el.target.value)}} type="number" name="" id="" placeholder="end" />
+            <input onChange={(el)=>{setStart(el.target.value)}} type="number" value={start} placeholder="start" />
+            <input onChange={(el)=>{setEnd(el.target.value)}} type="number" value={end} placeholder="end" />
             <button onClick={handleClick}>Start Timer</button><br/><hr/>
         </>
     )
