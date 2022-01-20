@@ -5,8 +5,8 @@ const Counter = () => {
   return <div>
       <h2>*** COUNTER ***</h2>
       <div>Counter: {num}</div>
-      <button onClick={()=>{setNum(num+1)}}>Add</button>
-      <button onClick={()=>{setNum(num-1)}}>Sub</button><br/><hr/>
+      <button onClick={()=>{setNum(num+1)}}>+</button>
+      <button onClick={()=>{setNum(num-1)}}>-</button><br/><hr/>
   </div>;
 };
 

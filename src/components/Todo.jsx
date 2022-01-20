@@ -30,10 +30,10 @@ const Todo = () => {
     return <div>
         <h2>*** TODO ***</h2>
         <input onChange={(el) => { setTodo(el.target.value) }} type="text" value={todo} placeholder='Enter Todo' />
-        <button onClick={handleClick}>Add Todo</button>
+        <button onClick={handleClick}>Add Todo</button><br/><br/>
         {data.map((el) => (
-            <div key={el.id} style={{ border: "1px solid gray", width: "200px", margin: "auto" }}>
-                <p>{el.name}</p>
+            <div key={el.id} style={{padding: "5px",borderRadius: "5px", border: "1px solid gray", width: "200px", margin: "auto", marginBottom: "10px" }}>
+                <div>{el.name}</div>
                 <button onClick={() => { handleDelete(el.id) }}>Delete</button>
             </div>
         ))}
